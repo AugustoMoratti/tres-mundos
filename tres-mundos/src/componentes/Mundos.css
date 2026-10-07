@@ -1,0 +1,81 @@
+.mundos {
+  position: relative;
+  height: 100dvh;
+  overflow: clip;
+  /* clip, no hidden */
+  isolation: isolate;
+}
+
+/* Todas las imágenes apiladas en el mismo lugar */
+.fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  /* no capturan el mouse */
+}
+
+.fondo.base {
+  opacity: 1;
+  z-index: 0;
+}
+
+/* siempre visible, debajo de todo */
+.fondo.visible {
+  opacity: 1;
+}
+
+/* la activa se funde por encima */
+
+/* Las 3 columnas, sobre los fondos */
+.columnas {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columna {
+  display: flex;
+  align-items: flex-end;
+  /* texto abajo (columnas 1 y 3) */
+  padding: 0 2rem 3rem;
+}
+
+.columna:nth-child(2) {
+  /* la del medio va arriba */
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10rem;
+}
+
+.enlace {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  /* agranda la zona de hover */
+  color: var(--verde-clarito);
+  text-decoration: none;
+  transform: rotate(-4deg);
+  transition: color 0.3s ease;
+}
+
+.enlace:hover,
+.enlace:focus-visible {
+  color: var(--texto-hover);
+}
+
+.enlace h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}

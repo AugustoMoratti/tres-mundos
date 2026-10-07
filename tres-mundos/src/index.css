@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/Grift-Black.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rage Italic";
+  src: url("/fonts/Rage-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+
+  --fuente-titulo: 'Grift', system-ui, sans-serif;
+  --fuente-cursiva: 'Rage Italic', cursive;
+  --verde-clarito: #f0fbc2;
+}
+
+body {
+  margin: 0;
+}
